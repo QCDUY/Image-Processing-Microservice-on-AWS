@@ -26,12 +26,13 @@ Successful responses have a 200 code, at least one error code for caught errors 
 
 ## AWS Elastic Beanstalk Deployment
 The project demonstrates the ability to create functional cloud deployments
-Endpoint URL: http://deployebproject2-dev.us-west-2.elasticbeanstalk.com/
+Endpoint URL: http://deployebproject2-dev2.us-west-2.elasticbeanstalk.com/
 
-Example: http://deployebproject2-dev.us-west-2.elasticbeanstalk.com/filteredimage?image_url=https://image.shutterstock.com/image-photo/diverse-amazon-forest-seen-above-600w-2072628056.jpg
+
+Example 1: http://deployebproject2-dev2.us-west-2.elasticbeanstalk.com/filteredimage?image_url=https://image.shutterstock.com/image-photo/diverse-amazon-forest-seen-above-600w-2072628056.jpg
+Example 2: http://deployebproject2-dev2.us-west-2.elasticbeanstalk.com/filteredimage?image_url=https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg
 
 Requires: Authorization Header with Bearer Token. Token is included in the Postman collection in the project directory.
-
 The project demonstrates an understanding of AWS Elastic Beanstalk’s CLI and Console Dashboard
 The project was deployed using the AWS Elastic Beanstalk CLI eb init, eb create, and eb deploy commands. A screenshot of the elastic beanstalk application dashboard is included in a deployment_screenshot directory.
 

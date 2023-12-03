@@ -11,22 +11,21 @@ let __dirname = path.resolve();
 // RETURNS
 //    an absolute path to a filtered image locally saved file
  export async function filterImageFromURL(inputURL) {
-  return new Promise(async (resolve, reject) => {
+  return new Promise( async (resolve, reject) => {
     try {
-      const photo = await Jimp.read(inputURL);
-      const outpath =
-        "/tmp/filtered." + Math.floor(Math.random() * 2000) + ".jpg";
-      await photo
-        .resize(256, 256) // resize
-        .quality(60) // set JPEG quality
-        .greyscale() // set greyscale
-        .write(__dirname + outpath, (img) => {
-          resolve(__dirname + outpath);
-      });
+        const photo = await Jimp.read(inputURL);
+        const path = '/tmp/filtered.'+Math.floor(Math.random() * 2000)+'.jpg';
+        await photo
+        .resize(256, 256) 
+        .quality(60) 
+        .greyscale() 
+        .write(__dirname+path, (img)=>{
+            resolve(__dirname+path);
+        });
     } catch (error) {
-      reject(error);
+        reject("Image filtering failed: Did you provide a valid URL?");
     }
-  });
+});
 }
 
 // deleteLocalFiles
@@ -35,5 +34,7 @@ let __dirname = path.resolve();
 // INPUTS
 //    files: Array<string> an array of absolute paths to files
  export async function deleteLocalFiles(files) {
-  fs.unlinkSync(files);
+  for( let file of files) {
+    fs.unlinkSync(file);
+  }
 }
